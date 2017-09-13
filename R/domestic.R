@@ -2,9 +2,10 @@
 # removes on a string all non valid lines
 .shave <- function(x){
   x %>%
-    gsub("^ | $", "", .) %>%
     # 2+ spaces are converted to a single space
     gsub(" {2, }", " ", .) %>%
+    # remove leading and trailing spaces
+    gsub("^ | $", "", .) %>%
     # every lines not containing (one or more) (word or number)
     grep("[[:alnum:]]+", ., value=TRUE)
 }
@@ -44,6 +45,6 @@
 .cuts_into_list <- function(x, pattern){
   ids <- grep(pattern, x)
   f <- rep(NA, length(x))
-  f[ids] <- factor(1:length(ids))
+  f[ids] <- seq_len(length(ids))
   split(x, .replace_na_with_last(f))
 }

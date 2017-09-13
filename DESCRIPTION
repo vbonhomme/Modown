@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: person("Vincent", "Bonhomme", email = "bonhomme.vincent@gmail.com", role = c("aut", "cre"))
 Description: Utilities to read, inspect, manipulate and write morphometrics data using the .coo file format. The latter is minimally defined by five simple rules and is easy to read and write by both humans and machines.
 Depends: R (>= 3.4.1)
-License: GPL-2 | GPL-3
+License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/vbonhomme/coo/

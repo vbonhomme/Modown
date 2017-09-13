@@ -1,3 +1,13 @@
+#' Export to coo from a single shape
+#'
+#' Nothing else than coordinates is supported
+#' @param x \code{matrix}
+#' @family export
+#' @export
+export_shp <- function(x){
+  apply(x, 1, paste0, collapse=" ")
+}
+
 #' Export to coo from a single shape from Coo Momocs' objects
 #'
 #' @param x any \code{Coo} object from Momocs

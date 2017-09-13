@@ -1,3 +1,18 @@
+#TODO remove folder below and readlines
+
+#' Write to single coo file from a shape
+#'
+#' Nothing else than coordinates is supported
+#' @param x \code{matrix}
+#' @param file \code{character} the name of the file to be created
+#' @family export
+#' @export
+write_shp <- function(x, file){
+  x %>%
+    export_shp() %>%
+    writeLines(con=file)
+}
+
 #' Write to a single coo file a single shape from Coo Momocs' objects
 #'
 #' @param x any \code{Coo} object from \code{Momocs}
@@ -39,7 +54,7 @@ write_Coo1 <- function(x, id, folder="", file){
 write_Coo <- function(x, folder="", file,
                       separate=FALSE, force=FALSE, zip=FALSE){
   if (separate){
-    shut_up <- lapply(seq_along(x),
+    silent <- lapply(seq_along(x),
                       function(.) write_Coo1(x=x, id=., folder=folder))
   } else {
     # if folder is provided but doesn't exist, create it
@@ -49,7 +64,8 @@ write_Coo <- function(x, folder="", file,
         if (force){
           dir.create(folder, recursive=TRUE)
         } else {
-          ans <- readline(paste(folder, "already exists; replace it anyway (y/n)?"))
+          ans <- readline(paste(folder,
+                                "already exists; replace it anyway (y/n)?"))
           if (ans=="y")
             dir.create(folder, recursive=TRUE)
           else
@@ -78,8 +94,8 @@ write_Coo <- function(x, folder="", file,
       export_Coo() %>%
       writeLines(con=file)
     if (zip){
-      shut_up <- suppressMessages(zip(gsub("coo", "zip", file), file, flags = "-r9Xq"))
-      shut_up <- file.remove(file)
+      suppressMessages(zip(gsub("coo", "zip", file), file, flags = "-r9Xq"))
+      silent <- file.remove(file)
     }
   }
 }

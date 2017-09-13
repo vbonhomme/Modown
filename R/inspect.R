@@ -35,7 +35,9 @@ inspect1 <- function(x){
   }
   ### HANDLE NO COV CASE
   ### covariates
-  covl <- lapply(xl, function(.) grep("[[:alpha:]] [[:alnum:]]", ., value=TRUE) %>%  .str2df %>% colnames)
+  covl <- lapply(xl,
+                 function(.) grep("[[:alpha:]] [[:alnum:]]", ., value=TRUE) %>%
+                   .str2df %>% colnames)
   # number of covariates per coo
   covl_length <- sapply(covl, length)
   # missing cov

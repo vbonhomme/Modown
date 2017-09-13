@@ -3,3 +3,13 @@
 language: R
 sudo: false
 cache: packages
+
+after_success:
+- Rscript -e 'covr::codecov()'
+
+notifications:
+  email:
+    recipients:
+      - bonhomme.vincent@gmail.com
+    on_success: change
+    on_failure: change
