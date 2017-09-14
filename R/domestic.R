@@ -18,12 +18,24 @@
   df
 }
 
+# turns the first line of a data.frame
+# into a space separated vector of character
+.df2str <- function(x){
+  cn <- colnames(x)
+  x %>% seq_along() %>% sapply(function(.) paste(cn[.], x[1, .]))
+}
+
 # turns a list with coordinates as a vector of characters into a matrix
 .str2mtx <- function(x){
   x %>%
     strsplit(" ") %>%
     lapply(as.numeric) %>%
     do.call("rbind", .)
+}
+
+# turns a matrix into a vector of coordinates as character
+.mtx2str <- function(x){
+  apply(x, 1, paste0, collapse=" ")
 }
 
 # detects valid paths
