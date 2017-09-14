@@ -11,10 +11,22 @@ test_that(".str2mtx", {
   expect_true(x %>%  .str2mtx %>% is.matrix)
 })
 
+test_that(".mtx2str", {
+  expect_true(matrix(1:12, 6, 2) %>% .mtx2str %>% is.character)
+})
+
 test_that(".str2df", {
   x <- c("plop plip", "plup 45", "plap p l o p") %>% .str2df()
   expect_true(is.data.frame(x) && ncol(x)==3)
 })
+
+test_that(".df2str", {
+  x <- data.frame(plop=1, plip="ee 56 ff") %>% .df2str()
+  expect_true(is.character(x))
+  expect_length(x, 2)
+})
+
+
 
 test_that(".is.path", {
   expect_true("mini.coo" %>% .is.path)
