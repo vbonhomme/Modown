@@ -7,7 +7,7 @@
 #' @export
 export_shp <- function(x, file){
   x %>%
-    convert_shp() %>%
+    convert() %>%
     writeLines(con=file)
 }
 
@@ -44,7 +44,16 @@ export_Coo1 <- function(x, id, file, force=FALSE){
 #' @param force \code{logical} whether to replace files
 #' @param zip \code{logical} whether to zip the created file
 #' @family export
+#' @examples
+#' \dontrun{
+#' library(Momocs)
+#' bot %>%
+#'    slice(c(1:5, 21:25)) %>% coo_sample(12) %>%
+#'    mutate(size=coo_centsize(.)) %>%
+#'    export_Coo("bot_lite")
+#' }
 #' @export
+#'
 export_Coo <- function(x, file,
                       separate=FALSE, force=FALSE, zip=FALSE){
   if (separate){
