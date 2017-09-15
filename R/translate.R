@@ -1,24 +1,3 @@
-#' Translate coo to other languages
-#'
-#' Plop
-#' @param x simple or multiple coo(s), as path or character vector
-#' @family translate
-#' @export
-translate <- function(x){
-  # grab all coos
-  coo <- x %>%
-    sapply(`[`, "coo") %>%
-    `names<-`(names(x))
-
-  # grab all facs
-  cov <- x %>%
-    sapply(`[`, "cov") %>%
-    do.call("rbind", .)
-
-  # return this beauty
-  list(coo=coo, cov=cov)
-}
-
 #' Translate coo to Momocs' Out
 #'
 #' Turns into
@@ -26,7 +5,7 @@ translate <- function(x){
 #' @family translate
 #' @export
 translate_Out <- function(x){
-  x <- translate(x)
+  x <- group(x)
   Out <- list(coo=x$coo, fac=x$cov)
   class(Out) <- c("Out", "Coo")
   Out
@@ -39,7 +18,7 @@ translate_Out <- function(x){
 #' @family translate
 #' @export
 translate_Opn <- function(x){
-  x <- translate(x)
+  x <- group(x)
   Opn <- list(coo=x$coo, fac=x$cov)
   class(Opn) <- c("Opn", "Coo")
   Opn
@@ -53,7 +32,7 @@ translate_Opn <- function(x){
 #' @family translate
 #' @export
 translate_Ldk <- function(x){
-  x <- translate(x)
+  x <- group(x)
   Ldk <- list(x$coo, fac=x$cov)
   class(Ldk) <- c("Ldk", "Coo")
   Ldk

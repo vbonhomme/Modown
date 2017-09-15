@@ -14,5 +14,5 @@ Turns into
 }
 \seealso{
 Other translate: \code{\link{translate_Opn}},
-  \code{\link{translate_Out}}, \code{\link{translate}}
+  \code{\link{translate_Out}}
 }
