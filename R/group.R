@@ -8,7 +8,6 @@
 #' @export
 group <- function(x){
   # grab all coos
-
   coo <- x %>%
     sapply(`[`, "coo") %>%
     `names<-`(names(x))
