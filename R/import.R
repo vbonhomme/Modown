@@ -17,7 +17,7 @@ import_coo1 <- function(x){
   x <- grep("^~", x, invert=TRUE, value=TRUE)
 
   ### covariates
-  cov_pos <- grep("[[:alpha:]] [[:alnum:]]", x)
+  cov_pos <- grep("[[:alpha:]]+[[:alnum:]]* [[:alnum:]]", x)
   # if covariates are present, we fill a data.frame
   if (length(cov_pos)>0){
     cov     <- x[cov_pos] %>% .str2df()
@@ -57,10 +57,11 @@ import_coo1 <- function(x){
 #' @export
 import_coo <- function(x){
   # if all paths are valid, import the files
-  if (all(sapply(x, .is.path)))
+  if (all(sapply(x, .is.path))){
     x <- lapply(x, readLines, warn=FALSE)
-  # turns them into a single vector
-  x <- do.call("c", x)
+    # turns them into a single vector
+    x <- do.call("c", x)
+  }
   # extract names
   fn <- grep("^~", x, value=TRUE) %>% gsub("~", "", .)
   # split this vector into coo1s and name them

@@ -36,14 +36,16 @@ inspect <- function(x){
   ### HANDLE NO COV CASE
   ### covariates
   covl <- lapply(xl,
-                 function(.) grep("[[:alnum:]] [[:alnum:]]", ., value=TRUE) %>%
+                 function(.) grep("[[:alpha:]]+[[:alnum:]]* [[:alnum:]]", ., value=TRUE) %>%
                    .str2df %>% colnames)
   # number of covariates per coo
   covl_length <- sapply(covl, length)
-  # missing cov
-  if (any(covl_length==0)){
-    .msg("cov must be present everywhere",
-         which(covl_length==0))
+  # some missing cov
+  if (any(covl_length>0)){
+    if (any(covl_length==0)){
+      .msg("cov must be present everywhere",
+           which(covl_length==0))
+    }
   }
   # homogeneous number of cov components
   if (length(unique(covl_length))>1){
