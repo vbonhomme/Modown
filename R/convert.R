@@ -25,7 +25,7 @@ convert <- function(x){
 convert_Coo1 <- function(x, id){
   name <- paste0("~", names(x)[id])
   cov  <- paste(names(x$fac), x$fac[id, ] %>% unlist %>% as.character())
-  coo  <- apply(x$coo[[id]], 1, paste, collapse=" ")
+  coo  <- .mtx2str(x$coo[[id]])
   c(name, cov, coo)
 }
 
