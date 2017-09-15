@@ -4,7 +4,7 @@
 #' @param x simple or multiple coo(s), as path or character vector
 #' @family inspect
 #' @export
-inspect1 <- function(x){
+inspect <- function(x){
   # prints a custom message
   .msg <- function(msg, id, what="coo"){
     message("! ", msg, ";\n\tcheck ", what, " #", paste(id, collapse=", "))
@@ -36,7 +36,7 @@ inspect1 <- function(x){
   ### HANDLE NO COV CASE
   ### covariates
   covl <- lapply(xl,
-                 function(.) grep("[[:alpha:]] [[:alnum:]]", ., value=TRUE) %>%
+                 function(.) grep("[[:alnum:]] [[:alnum:]]", ., value=TRUE) %>%
                    .str2df %>% colnames)
   # number of covariates per coo
   covl_length <- sapply(covl, length)
@@ -53,7 +53,7 @@ inspect1 <- function(x){
   # homogeneous names for cov components
   cov_table <- sort(table(unlist(covl)), decreasing = TRUE)
   if (length(unique(cov_table))>1){
-    .msg("cov names should be present everywhere (and check for typos)",
+    .msg("cov names should be present and homogeneous everywhere (and check for typos)",
          names(which(cov_table != cov_table[1])),
          what="cov names")
   }
@@ -72,7 +72,7 @@ inspect1 <- function(x){
   }
   # multiple spaces
   multiple_spaces <- grep("^.+ {2,}.+$", x)
-  if (length(trailing_spaces)>0){
+  if (length(multiple_spaces)>0){
     .msg("multiple spaces should be avoided", multiple_spaces, "lines")
   }
 
