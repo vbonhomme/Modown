@@ -15,6 +15,7 @@
   x <- strsplit(x, " ")
   df <- lapply(x, function(.) paste(.[-1], collapse=" ")) %>% as.data.frame
   colnames(df) <- sapply(x, `[`, 1)
+  rownames(df) <- NULL
   df
 }
 
@@ -35,6 +36,10 @@
 
 # turns a matrix into a vector of coordinates as character
 .mtx2str <- function(x){
+  # for the (rare) case where scientific notation
+  # is retained when as.character
+  op <- options(scipen=999)
+  on.exit(options(op))
   apply(x, 1, paste0, collapse=" ")
 }
 
