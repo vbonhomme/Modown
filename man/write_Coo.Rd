@@ -4,7 +4,7 @@
 \alias{write_Coo}
 \title{Write to a single or separate coo file a whole Coo Momocs' object}
 \usage{
-write_Coo(x, file, separate = FALSE, force = FALSE, zip = FALSE)
+write_Coo(x, file, separate = FALSE, force = FALSE)
 }
 \arguments{
 \item{x}{any \code{Coo} object from \code{Momocs}}
