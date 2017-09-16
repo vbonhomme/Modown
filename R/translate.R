@@ -33,7 +33,7 @@ translate_Opn <- function(x){
 #' @export
 translate_Ldk <- function(x){
   x <- group(x)
-  Ldk <- list(x$coo, fac=x$cov)
+  Ldk <- list(coo=x$coo, fac=x$cov)
   class(Ldk) <- c("Ldk", "Coo")
   Ldk
 

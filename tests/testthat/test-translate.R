@@ -10,9 +10,9 @@ load("shapes.rda"); shapes$cov <- shapes$fac
   expect_true(class %in% class(x))
   expect_true("Coo" %in% class(x))
 }
-test_that("translate_Out", {
+
+test_that("translate", {
   import_coo("bot_lite.coo") %>% translate_Out() %>% .test_translate("Out")
   import_coo("bot_lite.coo") %>% translate_Opn() %>% .test_translate("Opn")
   import_coo("bot_lite.coo") %>% translate_Ldk() %>% .test_translate("Ldk")
-
 })
