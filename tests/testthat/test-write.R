@@ -1,7 +1,5 @@
 context("write")
 
-
-
 # library(Momocs)
 test_that("write", {
   .test_write <- function(x){
@@ -58,10 +56,10 @@ test_that("write_Coo", {
     }
 
     f_rm()
-    write_Coo(x, id=2, file="plop.coo")
+    write_Coo(x, file="plop.coo")
     expect_true(file.exists("plop.coo"))
-    expect_error(write_Coo(x, id=2, file="plop.coo"))
-    expect_silent(write_Coo(x, id=2, file="plop.coo", force=TRUE))
+    expect_error(write_Coo(x, file="plop.coo"))
+    expect_silent(write_Coo(x, file="plop.coo", force=TRUE))
     expect_true(file.exists("plop.coo"))
     f_rm()
   }
@@ -71,3 +69,42 @@ test_that("write_Coo", {
   shapes %>% .test_write_Coo()
 
 })
+
+# test_that("write_Coo_separate", {
+#   bot_files <- c("brahma.coo",
+#                  "caney.coo",
+#                  "chimay.coo")
+#   olea_files <- c("0023-cPicMa_O14VL.coo",
+#                   "0023-cPicMa_O15VD.coo",
+#                   "0023-cPicMa_O15VL.coo")
+#   shapes_files <- c("arrow.coo",
+#                     "bone.coo",
+#                     "buttefly.coo",
+#                     "cat.coo",
+#                     "check.coo",
+#                     "cross.coo",
+#                     "dog.coo",
+#                     "fish.coo",
+#                     "hand.coo",
+#                     "hands.coo")
+#   .test_write_Coo_separate <- function(x, x_files){
+#     f_rm <- function(files){
+#       if (any(file.exists(files)))
+#         silent <- file.remove(files)
+#     }
+#
+#     f_rm(x_files)
+#     write_Coo(x, separate = TRUE)
+#     expect_true(all(file.exists(x_files)))
+#     expect_error(write_Coo(x, separate = TRUE))
+#     expect_silent(write_Coo(x, separate = TRUE, force=TRUE))
+#     expect_true(all(file.exists(x_files)))
+#     f_rm(x_files)
+#   }
+#
+#   bot %>% .test_write_Coo_separate(bot_files)
+#   olea %>% .test_write_Coo_separate(olea_files)
+#   shapes %>% .test_write_Coo_separate(shapes_files)
+#
+# })
+
