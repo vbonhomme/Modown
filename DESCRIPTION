@@ -9,7 +9,7 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/vbonhomme/coo/
 BugReports: https://github.com/vbonhomme/coo/issues
-Imports: magrittr, Momocs
-Suggests: devtools, knitr, rmarkdown, testthat, covr
+Imports: magrittr
+Suggests: Momocs, devtools, knitr, rmarkdown, testthat, covr
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
