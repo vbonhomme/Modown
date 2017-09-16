@@ -14,8 +14,6 @@ write_Coo(x, file, separate = FALSE, force = FALSE, zip = FALSE)
 \item{separate}{\code{logical} whether to create separate coo files}
 
 \item{force}{\code{logical} whether to replace files}
-
-\item{zip}{\code{logical} whether to zip the created file}
 }
 \description{
 Write to a single or separate coo file a whole Coo Momocs' object

@@ -61,7 +61,7 @@ write_Coo1 <- function(x, id, file, force=FALSE){
 write_Coo <- function(x, file,
                       separate=FALSE, force=FALSE, zip=FALSE){
   if (separate){
-    silent <- lapply(seq_along(x),
+    silent <- lapply(seq_along(x$coo),
                      function(.) write_Coo1(x=x, id=.,
                                             file=names(x$coo)[.], force=force))
   } else {

@@ -70,41 +70,44 @@ test_that("write_Coo", {
 
 })
 
-# test_that("write_Coo_separate", {
-#   bot_files <- c("brahma.coo",
-#                  "caney.coo",
-#                  "chimay.coo")
-#   olea_files <- c("0023-cPicMa_O14VL.coo",
-#                   "0023-cPicMa_O15VD.coo",
-#                   "0023-cPicMa_O15VL.coo")
-#   shapes_files <- c("arrow.coo",
-#                     "bone.coo",
-#                     "buttefly.coo",
-#                     "cat.coo",
-#                     "check.coo",
-#                     "cross.coo",
-#                     "dog.coo",
-#                     "fish.coo",
-#                     "hand.coo",
-#                     "hands.coo")
-#   .test_write_Coo_separate <- function(x, x_files){
-#     f_rm <- function(files){
-#       if (any(file.exists(files)))
-#         silent <- file.remove(files)
-#     }
-#
-#     f_rm(x_files)
-#     write_Coo(x, separate = TRUE)
-#     expect_true(all(file.exists(x_files)))
-#     expect_error(write_Coo(x, separate = TRUE))
-#     expect_silent(write_Coo(x, separate = TRUE, force=TRUE))
-#     expect_true(all(file.exists(x_files)))
-#     f_rm(x_files)
-#   }
-#
-#   bot %>% .test_write_Coo_separate(bot_files)
-#   olea %>% .test_write_Coo_separate(olea_files)
-#   shapes %>% .test_write_Coo_separate(shapes_files)
-#
-# })
+test_that("write_Coo_separate", {
+  bot_files <- c("brahma.coo",
+                 "caney.coo",
+                 "chimay.coo")
+  olea_files <- c("0023-cPicMa_O14VL.coo",
+                  "0023-cPicMa_O15VD.coo",
+                  "0023-cPicMa_O15VL.coo")
+  shapes_files <- c("arrow.coo",
+                    "bone.coo",
+                    "buttefly.coo",
+                    "cat.coo",
+                    "check.coo",
+                    "cross.coo",
+                    "dog.coo",
+                    "fish.coo",
+                    "hand.coo",
+                    "hands.coo")
+  .test_write_Coo_separate <- function(x, x_files){
+    f_rm <- function(files){
+      lapply(x_files,
+             function(.) {
+               if (file.exists(.))
+                 silent <- file.remove(.)
+             })
+    }
+
+    f_rm(x_files)
+    write_Coo(x, separate = TRUE)
+    expect_true(all(file.exists(x_files)))
+    expect_error(write_Coo(x, separate = TRUE))
+    expect_silent(write_Coo(x, separate = TRUE, force=TRUE))
+    expect_true(all(file.exists(x_files)))
+    f_rm(x_files)
+  }
+
+  bot %>% .test_write_Coo_separate(bot_files)
+  olea %>% .test_write_Coo_separate(olea_files)
+  shapes %>% .test_write_Coo_separate(shapes_files)
+
+})
 
