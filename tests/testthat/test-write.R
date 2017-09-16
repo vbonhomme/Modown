@@ -89,6 +89,10 @@ test_that("write_Coo", {
   expect_true(file.exists("olea2.coo"))
   silent <- file.remove("olea2.coo")
 
+  expect_silent(write_Coo(olea2, file="olea2"))
+  expect_true(file.exists("olea2.coo"))
+  silent <- file.remove("olea2.coo")
+
   expect_silent(write_Coo(shapes))
   expect_true(file.exists("shapes.coo"))
   silent <- file.remove("shapes.coo")
