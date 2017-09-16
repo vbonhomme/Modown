@@ -7,10 +7,7 @@
 translate_Opn(x)
 }
 \arguments{
-\item{...}{Arguments passed on to \code{translate_Out}
-\describe{
-  \item{x}{simple or multiple \code{.mod}, as path(s) or a vector of \code{character}}
-}}
+\item{x}{simple or multiple \code{.mod}, as path(s) or a vector of \code{character}}
 }
 \description{
 Turns into

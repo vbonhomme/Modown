@@ -14,7 +14,7 @@ translate_Out <- function(x){
 #' Translate mod to Momocs' Opn
 #'
 #' Turns into
-#' @inheritDotParams translate_Out
+#' @param x simple or multiple `.mod`, as path(s) or a vector of `character`
 #' @family translate
 #' @export
 translate_Opn <- function(x){
@@ -28,7 +28,7 @@ translate_Opn <- function(x){
 #' Translate mod to Momocs' Ldk
 #'
 #' Turns into
-#' @inheritDotParams translate_Out
+#' @param x simple or multiple `.mod`, as path(s) or a vector of `character`
 #' @family translate
 #' @export
 translate_Ldk <- function(x){
