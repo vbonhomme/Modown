@@ -80,6 +80,19 @@ test_that("write_Coo", {
   olea %>% .test_write_Coo()
   shapes %>% .test_write_Coo()
 
+  expect_silent(write_Coo(bot))
+  expect_true(file.exists("bot.coo"))
+  silent <- file.remove("bot.coo")
+
+  olea2 <- olea
+  expect_silent(write_Coo(olea2))
+  expect_true(file.exists("olea2.coo"))
+  silent <- file.remove("olea2.coo")
+
+  expect_silent(write_Coo(shapes))
+  expect_true(file.exists("shapes.coo"))
+  silent <- file.remove("shapes.coo")
+
 })
 
 test_that("write_Coo_separate", {
