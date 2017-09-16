@@ -1,21 +1,21 @@
 context("import")
 
-test_that("import_coo1", {
-  x <- import_coo1("3parts.coo")
+test_that("import_mod1", {
+  x <- import_mod1("3parts.mod")
   expect_true(is.list(x))
   expect_true(all(c("coo", "cov") %in% names(x)))
   expect_true(is.list(x$coo))
   expect_true(is.data.frame(x$cov))
 
-  x <- import_coo1("out.coo")
+  x <- import_mod1("out.mod")
   expect_true(is.list(x))
   expect_true(all(c("coo", "cov") %in% names(x)))
   expect_true(is.matrix(x$coo))
   expect_true(is.data.frame(x$cov))
 })
 
-test_that("import_coo", {
-  x <- import_coo("olea.coo")
+test_that("import_mod", {
+  x <- import_mod("olea.mod")
   expect_true(is.list(x))
   expect_true(all(sapply(x, function(.) is.matrix(.$coo))))
   expect_true(all(sapply(x, function(.) is.data.frame(.$cov))))

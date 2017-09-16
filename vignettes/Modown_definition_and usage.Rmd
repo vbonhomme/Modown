@@ -1,10 +1,10 @@
 ---
-title: "Defining and using .coo"
+title: "modown definition and usage"
 author: "Vincent Bonhomme"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{introduction-coo}
+  %\VignetteIndexEntry{modown}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

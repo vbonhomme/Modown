@@ -1,9 +1,9 @@
-#' Import a single coo
+#' Import a single mod
 #'
-#' @param x coo, as path or character vector
+#' @param x mod, as path or `character vector
 #' @family import
 #' @export
-import_coo1 <- function(x){
+import_mod1 <- function(x){
   ### if a valid path is provided, import the file
   if (.is.path(x))
     x <- x %>% readLines(warn = FALSE)
@@ -50,12 +50,12 @@ import_coo1 <- function(x){
   list(coo=coo, cov=cov)
 }
 
-#' Import multiple coo
+#' Import multiple mod
 #'
-#' @param x coo, as paths or a character vector
+#' @param x mod, as paths or a character vector
 #' @family import
 #' @export
-import_coo <- function(x){
+import_mod <- function(x){
   # if all paths are valid, import the files
   if (all(sapply(x, .is.path))){
     x <- lapply(x, readLines, warn=FALSE)
@@ -64,9 +64,9 @@ import_coo <- function(x){
   }
   # extract names
   fn <- grep("^~", x, value=TRUE) %>% gsub("~", "", .)
-  # split this vector into coo1s and name them
+  # split this vector into mod1s and name them
   x <- .cuts_into_list(x, "^~")
   names(x) <- fn
-  # import all coo1s
-  lapply(x, import_coo1)
+  # import all mod1s
+  lapply(x, import_mod1)
 }

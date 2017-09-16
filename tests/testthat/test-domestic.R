@@ -1,7 +1,7 @@
 context("domestic functions")
 
 test_that(".shave", {
-  x <- readLines("3parts.coo") %>% .shave()
+  x <- readLines("3parts.mod") %>% .shave()
   expect_length(x %>% grep("^ | $| {2,}", .), 0)
   expect_length(grep("[[:alnum:]]+", x), length(x))
 })
@@ -29,9 +29,9 @@ test_that(".df2str", {
 
 
 test_that(".is.path", {
-  expect_true("mini.coo" %>% .is.path)
-  expect_false(c("mini.coo", "out.coo") %>% .is.path)
-  expect_false("wrong_path.coo" %>% .is.path)
+  expect_true("mini.mod" %>% .is.path)
+  expect_false(c("mini.mod", "out.mod") %>% .is.path)
+  expect_false("wrong_path.mod" %>% .is.path)
 })
 
 test_that(".replace_na_with_last", {

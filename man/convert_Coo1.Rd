@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert.R
 \name{convert_Coo1}
 \alias{convert_Coo1}
-\title{Convert to coo from a single shape from Coo Momocs' objects}
+\title{Convert to mod from a single shape from Coo Momocs' object}
 \usage{
 convert_Coo1(x, id)
 }
@@ -12,7 +12,7 @@ convert_Coo1(x, id)
 \item{id}{\code{numeric}, which shape to convert}
 }
 \description{
-Convert to coo from a single shape from Coo Momocs' objects
+Convert to mod from a single shape from Coo Momocs' object
 }
 \seealso{
 Other convert: \code{\link{convert_Coo}},

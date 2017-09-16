@@ -1,7 +1,7 @@
-#' Translate coo to Momocs' Out
+#' Translate mod to Momocs' Out
 #'
 #' Turns into
-#' @param x simple or multiple coo(s), as path or character vector
+#' @param x simple or multiple `.mod`, as path(s) or a vector of `character`
 #' @family translate
 #' @export
 translate_Out <- function(x){
@@ -11,10 +11,10 @@ translate_Out <- function(x){
   Out
 }
 
-#' Translate coo to Momocs' Opn
+#' Translate mod to Momocs' Opn
 #'
 #' Turns into
-#' @param x simple or multiple coo(s), as path or character vector
+#' @inheritDotParams translate_Out
 #' @family translate
 #' @export
 translate_Opn <- function(x){
@@ -25,10 +25,10 @@ translate_Opn <- function(x){
 }
 
 
-#' Translate coo to Momocs' Ldk
+#' Translate mod to Momocs' Ldk
 #'
 #' Turns into
-#' @param x simple or multiple coo(s), as path or character vector
+#' @inheritDotParams translate_Out
 #' @family translate
 #' @export
 translate_Ldk <- function(x){

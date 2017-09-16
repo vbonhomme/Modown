@@ -2,15 +2,15 @@
 % Please edit documentation in R/group.R
 \name{group}
 \alias{group}
-\title{Group elements of a list into a list of elements}
+\title{Group coo and cov from a list}
 \usage{
 group(x)
 }
 \arguments{
-\item{x}{simple or multiple coo(s), as path or character vector}
+\item{x}{simple or multiple \code{mod}(s), as path or \code{character} vector}
 }
 \description{
-Useful when a list of coos (with \code{coo} and \code{cov}) must be
+Useful when a list of \code{mod}s (with \code{coo} and \code{cov}) must be
 turned into a list with \code{$coo} as a list of \code{coo} and
- an rbinded \code{data.frame} of all \code{cov}s
+an rbinded \code{data.frame} of all \code{cov}s
 }

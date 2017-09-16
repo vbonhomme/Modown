@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.R
 \name{write_Coo1}
 \alias{write_Coo1}
-\title{Write to a single coo file a single shape from Coo Momocs' objects}
+\title{Write to a single mod file a single shape from a Coo Momocs' object}
 \usage{
 write_Coo1(x, id, file, force = FALSE)
 }
@@ -16,7 +16,7 @@ write_Coo1(x, id, file, force = FALSE)
 \item{force}{\code{logical} whether to replace file}
 }
 \description{
-Write to a single coo file a single shape from Coo Momocs' objects
+Write to a single mod file a single shape from a Coo Momocs' object
 }
 \seealso{
 Other write: \code{\link{write_Coo}}, \code{\link{write}}

@@ -1,15 +1,16 @@
-Package: coo
-Title: A Simple File Format for Morphometrics Data
+Package: Modown
+Title: A Minimalist Syntax for Morphometrics Data
 Version: 0.0.0.9000
 Authors@R: person("Vincent", "Bonhomme", email = "bonhomme.vincent@gmail.com", role = c("aut", "cre"))
-Description: Utilities to read, inspect, manipulate and write morphometrics data using the .coo file format. The latter is minimally defined by five simple rules and is easy to read and write by both humans and machines.
+Description: Utilities to read, write, inspect and manipulate morphometrics data using the .mod file format. The latter is minimally defined by five syntaxic rules and is easy to read and write by both humans and machines.
 Depends: R (>= 3.4.1)
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/vbonhomme/coo/
-BugReports: https://github.com/vbonhomme/coo/issues
+URL: https://github.com/vbonhomme/Modown/
+BugReports: https://github.com/vbonhomme/Modown/issues
 Imports: magrittr
 Suggests: Momocs, devtools, knitr, rmarkdown, testthat, covr
 VignetteBuilder: knitr
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.0.1

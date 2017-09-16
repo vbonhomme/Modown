@@ -2,12 +2,15 @@
 % Please edit documentation in R/translate.R
 \name{translate_Ldk}
 \alias{translate_Ldk}
-\title{Translate coo to Momocs' Ldk}
+\title{Translate mod to Momocs' Ldk}
 \usage{
 translate_Ldk(x)
 }
 \arguments{
-\item{x}{simple or multiple coo(s), as path or character vector}
+\item{...}{Arguments passed on to \code{translate_Out}
+\describe{
+  \item{x}{simple or multiple \code{.mod}, as path(s) or a vector of \code{character}}
+}}
 }
 \description{
 Turns into

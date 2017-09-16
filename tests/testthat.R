@@ -1,4 +1,4 @@
 library(testthat)
-library(coo)
+library(Modown)
 
-test_check("coo")
+test_check("Modown")

@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.R
 \name{write}
 \alias{write}
-\title{Write to single coo file from a shape}
+\title{Write to single mod file from a shape}
 \usage{
 write(x, file, force = FALSE)
 }

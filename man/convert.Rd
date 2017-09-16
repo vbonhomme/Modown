@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert.R
 \name{convert}
 \alias{convert}
-\title{Convert to coo from a single shape}
+\title{Convert to mod from a single shape}
 \usage{
 convert(x)
 }
@@ -13,7 +13,7 @@ or a \code{list} with
 \code{$coo} (\code{matrix}) and \code{$cov} (\code{data.frame})}
 }
 \description{
-Returns a coo from coordinates, covariates or both.
+Returns a mod from coordinates, covariates or both.
 }
 \seealso{
 Other convert: \code{\link{convert_Coo1}},

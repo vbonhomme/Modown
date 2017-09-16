@@ -2,7 +2,7 @@
 % Please edit documentation in R/convert.R
 \name{convert_Coo}
 \alias{convert_Coo}
-\title{Convert to coo a whole Coo Momocs' object}
+\title{Convert to mod a whole Coo Momocs' object}
 \usage{
 convert_Coo(x)
 }
@@ -10,7 +10,7 @@ convert_Coo(x)
 \item{x}{any \code{Coo} object from Momocs}
 }
 \description{
-Convert to coo a whole Coo Momocs' object
+Convert to mod a whole Coo Momocs' object
 }
 \seealso{
 Other convert: \code{\link{convert_Coo1}},

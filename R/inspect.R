@@ -1,12 +1,12 @@
-#' Inspect coo file for possible problems
+#' Inspect mod file for possible problems
 #'
 #' Not guaranteed.
-#' @param x simple or multiple coo(s), as path or character vector
+#' @param x simple or multiple mod, as path(s) or vector of `character
 #' @family inspect
 #' @export
 inspect <- function(x){
   # prints a custom message
-  .msg <- function(msg, id, what="coo"){
+  .msg <- function(msg, id, what="mod"){
     message("! ", msg, ";\n\tcheck ", what, " #", paste(id, collapse=", "))
   }
 
@@ -38,7 +38,7 @@ inspect <- function(x){
   covl <- lapply(xl,
                  function(.) grep("[[:alpha:]]+[[:alnum:]]* [[:alnum:]]", ., value=TRUE) %>%
                    .str2df %>% colnames)
-  # number of covariates per coo
+  # number of covariates per mod
   covl_length <- sapply(covl, length)
   # some missing cov
   if (any(covl_length>0)){

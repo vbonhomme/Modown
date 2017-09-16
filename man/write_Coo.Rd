@@ -2,7 +2,7 @@
 % Please edit documentation in R/write.R
 \name{write_Coo}
 \alias{write_Coo}
-\title{Write to a single or separate coo file a whole Coo Momocs' object}
+\title{Write to a single or separate mod file a whole Coo Momocs' object}
 \usage{
 write_Coo(x, file, separate = FALSE, force = FALSE)
 }
@@ -11,12 +11,12 @@ write_Coo(x, file, separate = FALSE, force = FALSE)
 
 \item{file}{\code{character} the name of the file(s) to be created}
 
-\item{separate}{\code{logical} whether to create separate coo files}
+\item{separate}{\code{logical} whether to create separate mod files}
 
 \item{force}{\code{logical} whether to replace files}
 }
 \description{
-Write to a single or separate coo file a whole Coo Momocs' object
+Write to a single or separate mod file a whole Coo Momocs' object
 }
 \examples{
 \dontrun{

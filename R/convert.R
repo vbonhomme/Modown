@@ -1,10 +1,10 @@
-#' Convert to coo from a single shape
+#' Convert to mod from a single shape
 #'
-#' Returns a coo from coordinates, covariates or both.
-#' @param x \code{matrix} of coordinates,
-#' or \code{data.frame} of covariates,
-#' or a \code{list} with
-#' \code{$coo} (\code{matrix}) and \code{$cov} (\code{data.frame})
+#' Returns a mod from coordinates, covariates or both.
+#' @param x `matrix` of coordinates,
+#' or `data.frame` of covariates,
+#' or a `list` with
+#' `$coo` (`matrix`) and `$cov` (`data.frame`)
 #' @family convert
 #' @export
 convert <- function(x){
@@ -16,10 +16,10 @@ convert <- function(x){
     return(c(.df2str(x$cov), .mtx2str(x$coo)))
 }
 
-#' Convert to coo from a single shape from Coo Momocs' objects
+#' Convert to mod from a single shape from Coo Momocs' object
 #'
-#' @param x any \code{Coo} object from Momocs
-#' @param id \code{numeric}, which shape to convert
+#' @param x any `Coo` object from Momocs
+#' @param id `numeric`, which shape to convert
 #' @family convert
 #' @export
 convert_Coo1 <- function(x, id){
@@ -29,8 +29,8 @@ convert_Coo1 <- function(x, id){
   c(name, cov, coo)
 }
 
-#' Convert to coo a whole Coo Momocs' object
-#' @param x any \code{Coo} object from Momocs
+#' Convert to mod a whole Coo Momocs' object
+#' @param x any `Coo` object from Momocs
 #' @family convert
 #' @export
 convert_Coo <- function(x){

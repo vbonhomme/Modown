@@ -2,12 +2,12 @@
 % Please edit documentation in R/translate.R
 \name{translate_Out}
 \alias{translate_Out}
-\title{Translate coo to Momocs' Out}
+\title{Translate mod to Momocs' Out}
 \usage{
 translate_Out(x)
 }
 \arguments{
-\item{x}{simple or multiple coo(s), as path or character vector}
+\item{x}{simple or multiple \code{.mod}, as path(s) or a vector of \code{character}}
 }
 \description{
 Turns into

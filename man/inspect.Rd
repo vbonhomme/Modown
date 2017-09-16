@@ -2,12 +2,12 @@
 % Please edit documentation in R/inspect.R
 \name{inspect}
 \alias{inspect}
-\title{Inspect coo file for possible problems}
+\title{Inspect mod file for possible problems}
 \usage{
 inspect(x)
 }
 \arguments{
-\item{x}{simple or multiple coo(s), as path or character vector}
+\item{x}{simple or multiple mod, as path(s) or vector of `character}
 }
 \description{
 Not guaranteed.
