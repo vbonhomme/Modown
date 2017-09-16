@@ -11,7 +11,7 @@ test_that("write", {
     f_rm()
     write(x, "plop.coo")
     expect_true(file.exists("plop.coo"))
-    expect_error(write(x))
+    expect_error(write(x, file="plop.coo"))
     expect_silent(write(x, "plop.coo", force=TRUE))
     expect_true(file.exists("plop.coo"))
     f_rm()
@@ -44,6 +44,18 @@ test_that("write_Coo1", {
   bot %>% .test_write_Coo1()
   olea %>% .test_write_Coo1()
   shapes %>% .test_write_Coo1()
+
+  expect_silent(write_Coo1(bot, 1))
+  expect_true(file.exists("brahma.coo"))
+  silent <- file.remove("brahma.coo")
+
+  expect_silent(write_Coo1(olea, 1))
+  expect_true(file.exists("0023-cPicMa_O14VL.coo"))
+  file.remove("0023-cPicMa_O14VL.coo")
+
+  expect_silent(write_Coo1(shapes, 1))
+  expect_true(file.exists("arrow.coo"))
+  silent <- file.remove("arrow.coo")
 
 })
 

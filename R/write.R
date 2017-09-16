@@ -27,7 +27,7 @@ write <- function(x, file, force=FALSE){
 write_Coo1 <- function(x, id, file, force=FALSE){
   # if file is missing, inherits x[id] name
   if (missing(file))
-    file <- paste0(names(x)[id], ".coo")
+    file <- paste0(names(x$coo)[id], ".coo")
   # if no extension yet, add it
   if (length(grep(".coo$", file))==0)
     file <- paste0(file, ".coo")
