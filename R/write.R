@@ -47,7 +47,6 @@ write_Coo1 <- function(x, id, file, force=FALSE){
 #' @param file \code{character} the name of the file(s) to be created
 #' @param separate \code{logical} whether to create separate coo files
 #' @param force \code{logical} whether to replace files
-#' @param zip \code{logical} whether to zip the created file
 #' @family write
 #' @examples
 #' \dontrun{
@@ -63,7 +62,8 @@ write_Coo <- function(x, file,
                       separate=FALSE, force=FALSE, zip=FALSE){
   if (separate){
     silent <- lapply(seq_along(x),
-                     function(.) write_Coo1(x=x, id=., force=force))
+                     function(.) write_Coo1(x=x, id=.,
+                                            file=names(x$coo)[.], force=force))
   } else {
     # if file is missing, inherits x name
     if (missing(file))
@@ -79,9 +79,5 @@ write_Coo <- function(x, file,
     x %>%
       convert_Coo() %>%
       writeLines(con=file)
-    if (zip){
-      suppressMessages(zip(gsub("coo", "zip", file), file, flags = "-r9Xq"))
-      silent <- file.remove(file)
-    }
   }
 }
