@@ -14,17 +14,17 @@ test_that("convert", {
 
 test_that("convert_Coo1", {
   expect_silent(convert_Coo1(bot, 1) %>% inspect)
-  x <- convert_Coo1(bot, 1) %>% import_mod1()
+  x <- convert_Coo1(bot, 1) %>% read_mod1()
   expect_true(is.matrix(x$coo) && ncol(x$coo)==2)
   expect_true(is.data.frame(x$cov))
 
   expect_silent(convert_Coo1(olea, 1) %>% inspect)
-  x <- convert_Coo1(olea, 1) %>% import_mod1()
+  x <- convert_Coo1(olea, 1) %>% read_mod1()
   expect_true(is.matrix(x$coo) && ncol(x$coo)==2)
   expect_true(is.data.frame(x$cov))
 
   expect_silent(convert_Coo1(shapes, 4) %>% inspect)
-  x <- convert_Coo1(shapes, 4) %>% import_mod1()
+  x <- convert_Coo1(shapes, 4) %>% read_mod1()
   expect_true(is.matrix(x$coo) && ncol(x$coo)==2)
   expect_true(is.data.frame(x$cov))
 })
@@ -36,15 +36,15 @@ test_that("convert_Coo", {
     expect_true(is.data.frame(x$cov))
   }
   expect_silent(convert_Coo(bot) %>% inspect)
-  convert_Coo(bot) %>% import_mod() %>% group %>%
+  convert_Coo(bot) %>% read_mod() %>% group %>%
     .test_convert_Coo()
 
   expect_silent(convert_Coo(olea) %>% inspect)
-  convert_Coo(olea) %>% import_mod() %>% group %>%
+  convert_Coo(olea) %>% read_mod() %>% group %>%
     .test_convert_Coo()
 
   expect_silent(convert_Coo(shapes) %>% inspect)
-  convert_Coo(shapes) %>% import_mod() %>% group %>%
+  convert_Coo(shapes) %>% read_mod() %>% group %>%
     .test_convert_Coo()
 })
 

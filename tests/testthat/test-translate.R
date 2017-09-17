@@ -12,7 +12,7 @@ load("shapes.rda"); shapes$cov <- shapes$fac
 }
 
 test_that("translate", {
-  import_mod("bot_lite.mod") %>% translate_Out() %>% .test_translate("Out")
-  import_mod("bot_lite.mod") %>% translate_Opn() %>% .test_translate("Opn")
-  import_mod("bot_lite.mod") %>% translate_Ldk() %>% .test_translate("Ldk")
+  read_mod("bot_lite.mod") %>% translate_Out() %>% .test_translate("Out")
+  read_mod("bot_lite.mod") %>% translate_Opn() %>% .test_translate("Opn")
+  read_mod("bot_lite.mod") %>% translate_Ldk() %>% .test_translate("Ldk")
 })

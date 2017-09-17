@@ -1,10 +1,10 @@
-#' Import a single mod
+#' Read a single mod
 #'
 #' @param x mod, as path or `character vector
-#' @family import
+#' @family read
 #' @export
-import_mod1 <- function(x){
-  ### if a valid path is provided, import the file
+read_mod1 <- function(x){
+  ### if a valid path is provided, read the file
   if (.is.path(x))
     x <- x %>% readLines(warn = FALSE)
 
@@ -50,13 +50,13 @@ import_mod1 <- function(x){
   list(coo=coo, cov=cov)
 }
 
-#' Import multiple mod
+#' read multiple mod
 #'
 #' @param x mod, as paths or a character vector
-#' @family import
+#' @family read
 #' @export
-import_mod <- function(x){
-  # if all paths are valid, import the files
+read_mod <- function(x){
+  # if all paths are valid, read the files
   if (all(sapply(x, .is.path))){
     x <- lapply(x, readLines, warn=FALSE)
     # turns them into a single vector
@@ -67,6 +67,6 @@ import_mod <- function(x){
   # split this vector into mod1s and name them
   x <- .cuts_into_list(x, "^~")
   names(x) <- fn
-  # import all mod1s
-  lapply(x, import_mod1)
+  # read all mod1s
+  lapply(x, read_mod1)
 }
