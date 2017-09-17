@@ -10,7 +10,7 @@ Modown (in dev.): a minimalist file format for morphometrics data
 ### Rationale
 Morphometrics data essentially consist of coordinates and, if any, associated covariates.
 
-Existing morphometrics file format exist, eg `.tps`, `.nts`, `.xml`, etc. but (in my humble opinion) none is fully satisfactory.
+Existing morphometrics, eg `.tps`, `.nts`, `.xml`, etc. are not fully generic and/or explicitely defined/consistent, etc.
 
 I propose here the `.mod` (short for `Modown`) file format along with R utilities.
 
