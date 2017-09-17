@@ -16,7 +16,15 @@ Verb         | From                          | To
 `read`       |`.mod` file(s)                 | `mod` in R
 `write`      | `mod` in R                    | `.mod` file(s)
 `convert`    | non-`mod` in R                | `mod` in R
-`translate`*  | `.mod` (or other) file(s)     | `.mod` (or other) file(s)
+`translate`* | `.mod` (or other) file(s)     | `.mod` (or other) file(s)
+
+.mod file(s) -> [read_mod] -> mod -> [write] -> .mod
+others files -> [read_*]   -> mod /
+non-mod files in R -> convert /
+translate short for read, convert and write
+translate_nts2mod
+translate_
+
 
 For `translate` no translation is currently supported but those are planned:
 
