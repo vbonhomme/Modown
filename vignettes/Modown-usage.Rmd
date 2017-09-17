@@ -1,0 +1,27 @@
+---
+title: "Modown usage"
+author: "Vincent Bonhomme"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mod-usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Verbs
+
+Verb         | From                          | To
+-------------|-------------------------------|---------------
+`read`       |`.mod` file(s)                 | `mod` in R
+`write`      | `mod` in R                    | `.mod` file(s)
+`convert`    | non-`mod` in R                | `mod` in R
+`translate`*  | `.mod` (or other) file(s)     | `.mod` (or other) file(s)
+
+For `translate` no translation is currently supported but those are planned:
+
+* Momocs (`Coo2mod` and `mod2Coo`)
+* nts (`nts2mod` and `tps2mod`)
+* tps (`tps2mod` and `mod2tps`).
+
+
