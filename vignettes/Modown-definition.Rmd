@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-## Rationale
+### Rationale
 Morphometrics data essentially consist of coordinates and, if any, associated covariates.
 
 Existing morphometrics file format exist, eg `.tps`, `.nts`, `.xml`, etc. but (in my humble opinion) none is fully satisfactory.
@@ -19,7 +19,7 @@ Just like markdown, `Modown` has minimalist syntax and is easy to read/manipulat
 
 Modown name is derived from [markdown](https://daringfireball.net/projects/markdown/), sounds a bit like [Momocs](https://cran.r-project.org/web/packages/Momocs/index.html) and is a tribute to [Motown](https://en.wikipedia.org/wiki/Motown).
 
-## Specifications
+### Specifications
 `.mod` files are plain text files whose single line syntax fall within one of the five following rules:
 
 1. **space-separated numbers** stand for coordinates or other numeric data in each dimension: eg `-0.5 0.5`; `0 0 0`
@@ -28,7 +28,7 @@ Modown name is derived from [markdown](https://daringfireball.net/projects/markd
 4. **tilde and word** names a shape when several are collated in the same file: eg `~iris150`
 5. **anything else** is ignored: eg `#a comment`
 
-## Examples
+### Examples
 
 A single shape with one covariate:
 
