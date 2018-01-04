@@ -22,9 +22,9 @@ Modown name is derived from [markdown](https://daringfireball.net/projects/markd
 `.mod` files are plain text files whose single line syntax fall within one of the five following rules:
 
 1. **space-separated numbers** stand for coordinates or other numeric data in each dimension: eg `-0.5 0.5`; `0 0 0`
-2. **word and word/number** include a covariate name and its value: eg `LM`; `out`
-3. **single word** introduces a partition of coordinates: eg `size 3.14` <br />`sp H. sapiens`
-4. **tilde and word** names a shape when several are collated in the same file: eg `~iris150`
+2. **word and word/number** include a covariate name and its value: eg `size 3.14`; `sp H. sapiens`
+3. **single word** introduces a partition of coordinates: eg `polygon`; `points`
+4. **tilde (and word)** separate (and name) several individuals in the same file: eg `~`; `~iris150`
 5. **anything else** is ignored: eg `#a comment`
 
 ### Examples
